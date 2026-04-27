@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">PhoneCircle</string>
+    <string name="login_title">PhoneCircle</string>
+    <string name="login_subtitle">Secure your device, protect your community</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register_prompt">Don\'t have an account? Register</string>
+    <string name="register_title">Create Account</string>
+    <string name="register_subtitle">Join the community to protect your devices</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="login_prompt">Already have an account? Login</string>
+    <string name="full_name">Full Name</string>
+    <string name="forgot_password">Forgot Password?</string>
+
+    <!-- Dashboard Strings -->
+    <string name="verify_phone">Verify a Phone</string>
+    <string name="verify_subtitle">Enter IMEI to check if it\'s reported stolen or lost.</string>
+    <string name="imei_hint">Enter 15-digit IMEI</string>
+    <string name="check_status">Check Status</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="register_phone">Register Phone</string>
+    <string name="report_stolen">Report Stolen</string>
+    <string name="my_devices">My Devices</string>
+    <string name="community">Community</string>
+
+    <!-- Content Descriptions -->
+    <string name="desc_register">Icon for registering a phone</string>
+    <string name="desc_report">Icon for reporting a stolen phone</string>
+    <string name="desc_devices">Icon for viewing my devices</string>
+    <string name="desc_community">Icon for community reports</string>
+</resources>
