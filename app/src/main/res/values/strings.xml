@@ -5,29 +5,65 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="register_prompt">Don\'t have an account? Register</string>
+    <string name="register_prompt">Don\'t have an account? </string>
+    <string name="register_now">Register Now</string>
     <string name="register_title">Create Account</string>
-    <string name="register_subtitle">Join the community to protect your devices</string>
+    <string name="register_subtitle">Join PhoneCircle community today</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="register">Register</string>
     <string name="login_prompt">Already have an account? Login</string>
     <string name="full_name">Full Name</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="remember_me">Remember me</string>
 
     <!-- Dashboard Strings -->
-    <string name="verify_phone">Verify a Phone</string>
-    <string name="verify_subtitle">Enter IMEI to check if it\'s reported stolen or lost.</string>
-    <string name="imei_hint">Enter 15-digit IMEI</string>
-    <string name="check_status">Check Status</string>
-    <string name="quick_actions">Quick Actions</string>
+    <string name="protect_subtitle">Protect Your Device</string>
+    <string name="your_registered_phones">Your Registered Phones</string>
+    <string name="no_phones_registered">No devices registered yet.</string>
+    <string name="quick_stats">Quick Stats</string>
+    <string name="registered_label">Registered</string>
+    <string name="verified_label">Verified</string>
+    <string name="reports_label">Reports</string>
+    <string name="safe">SAFE</string>
+    <string name="imei_number_label">IMEI Number</string>
+    <string name="report_lost">Report Lost</string>
+    <string name="view_details">View Details</string>
+    <string name="community_alert">Community Alert</string>
+    <string name="alert_message">3 suspicious phone sales reported in your area this week</string>
     <string name="register_phone">Register Phone</string>
-    <string name="report_stolen">Report Stolen</string>
-    <string name="my_devices">My Devices</string>
-    <string name="community">Community</string>
 
     <!-- Content Descriptions -->
+    <string name="desc_logo">PhoneCircle Logo</string>
+    <string name="desc_notifications">Notifications</string>
+    <string name="desc_menu">Menu</string>
     <string name="desc_register">Icon for registering a phone</string>
-    <string name="desc_report">Icon for reporting a stolen phone</string>
-    <string name="desc_devices">Icon for viewing my devices</string>
-    <string name="desc_community">Icon for community reports</string>
+    <string name="desc_verify">Icon for verifying IMEI</string>
+    <string name="desc_alert">Alert Icon</string>
+    <string name="desc_phone_icon">Phone Icon</string>
+
+    <!-- Register Additional -->
+    <string name="email_address">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="full_name_hint">Enter your full name</string>
+    <string name="email_hint_new">your.email@example.com</string>
+    <string name="phone_hint">Enter your phone number</string>
+    <string name="password_hint">Create a strong password</string>
+    <string name="confirm_password_hint">Re-enter your password</string>
+    <string name="terms_policy">I agree to the Terms of Service and Privacy Policy</string>
+    <string name="encrypted_secure">Your data is encrypted and secure</string>
+
+    <!-- Register Phone Additional -->
+    <string name="phone_brand">Phone Brand</string>
+    <string name="select_brand">Select brand</string>
+    <string name="phone_model">Phone Model</string>
+    <string name="phone_model_hint">e.g., Galaxy S21, iPhone 13 Pro</string>
+    <string name="imei_number">IMEI Number</string>
+    <string name="imei_hint">Enter 15-digit IMEI</string>
+    <string name="phone_color">Phone Color</string>
+    <string name="phone_color_hint">e.g., Black, Blue, White</string>
+    <string name="upload_photo">Upload Phone Photo (Optional)</string>
+    <string name="photo_help">Helps identify your phone if lost</string>
+    <string name="choose_photo">Choose Photo</string>
+    <string name="cancel">Cancel</string>
+    <string name="verify_imei">Verify IMEI</string>
 </resources>

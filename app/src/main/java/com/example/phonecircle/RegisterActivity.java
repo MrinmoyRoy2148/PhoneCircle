@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +21,8 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     private static final String TAG = "RegisterActivity";
-    private TextInputEditText etName, etEmail, etPassword, etConfirmPassword;
+    private TextInputEditText etName, etEmail, etPhone, etPassword, etConfirmPassword;
+    private CheckBox cbTerms;
     private Button btnRegister;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
@@ -35,8 +37,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         etName = findViewById(R.id.et_name);
         etEmail = findViewById(R.id.et_email);
+        etPhone = findViewById(R.id.et_phone);
         etPassword = findViewById(R.id.et_password);
         etConfirmPassword = findViewById(R.id.et_confirm_password);
+        cbTerms = findViewById(R.id.cb_terms);
         btnRegister = findViewById(R.id.btn_register);
 
         btnRegister.setOnClickListener(v -> registerUser());
@@ -45,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void registerUser() {
         String name = etName.getText() != null ? etName.getText().toString().trim() : "";
         String email = etEmail.getText() != null ? etEmail.getText().toString().trim() : "";
+        String phone = etPhone.getText() != null ? etPhone.getText().toString().trim() : "";
         String password = etPassword.getText() != null ? etPassword.getText().toString().trim() : "";
         String confirmPassword = etConfirmPassword.getText() != null ? etConfirmPassword.getText().toString().trim() : "";
 
@@ -54,6 +59,10 @@ public class RegisterActivity extends AppCompatActivity {
         }
         if (TextUtils.isEmpty(email)) {
             etEmail.setError("Email is required");
+            return;
+        }
+        if (TextUtils.isEmpty(phone)) {
+            etPhone.setError("Phone Number is required");
             return;
         }
         if (TextUtils.isEmpty(password)) {
@@ -68,6 +77,10 @@ public class RegisterActivity extends AppCompatActivity {
             etConfirmPassword.setError("Passwords do not match");
             return;
         }
+        if (!cbTerms.isChecked()) {
+            Toast.makeText(this, "Please agree to the terms and conditions", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         btnRegister.setEnabled(false);
 
@@ -79,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
                             // Step 2: Save user info to Firestore
-                            saveUserToFirestore(user.getUid(), name, email);
+                            saveUserToFirestore(user.getUid(), name, email, phone);
                         } else {
                             navigateToLogin();
                         }
@@ -93,23 +106,20 @@ public class RegisterActivity extends AppCompatActivity {
                 });
     }
 
-    private void saveUserToFirestore(String userId, String name, String email) {
+    private void saveUserToFirestore(String userId, String name, String email, String phone) {
         Map<String, Object> user = new HashMap<>();
         user.put("name", name);
         user.put("email", email);
+        user.put("phone", phone);
         user.put("role", "user");
 
         // We initiate the Firestore write
         db.collection("users").document(userId).set(user);
         
-        // IMMEDIATE NAVIGATION: 
-        // We move to login immediately after Auth success and starting the database write.
-        // This prevents the user from getting stuck if Firestore API is disabled or slow.
         navigateToLogin();
     }
 
     private void navigateToLogin() {
-        // Sign out to ensure clean session for the next login attempt
         if (mAuth.getCurrentUser() != null) {
             mAuth.signOut();
         }
