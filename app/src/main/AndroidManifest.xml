@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".PhoneCircleApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,18 +17,49 @@
 
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".RegisterActivity"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity android:name=".MainActivity" />
-        <activity android:name=".ProfileActivity" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".RegisterPhoneActivity" />
+
+        <activity
+            android:name=".RegisterPhoneActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".VerifyImeiActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".RegisteredPhonesActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".MyReportsActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".PhoneDetailsActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ReportPhoneActivity"
+            android:windowSoftInputMode="adjustResize" />
 
     </application>
 

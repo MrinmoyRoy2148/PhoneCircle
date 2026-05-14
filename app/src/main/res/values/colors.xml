@@ -1,31 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
-    <!-- PhoneCircle Brand Colors -->
+    <!-- Brand Colors -->
     <color name="primary_blue">#4F46E5</color>
     <color name="primary_dark_blue">#3730A3</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Gradients -->
     <color name="header_gradient_start">#4F46E5</color>
     <color name="header_gradient_end">#7C3AED</color>
-
     <color name="alert_gradient_start">#2563EB</color>
     <color name="alert_gradient_end">#3B82F6</color>
 
+    <!-- Status Colors -->
     <color name="status_safe_bg">#DCFCE7</color>
     <color name="status_safe_text">#166534</color>
     <color name="status_stolen">#EF4444</color>
+    <color name="status_stolen_bg">#FEE2E2</color>
     <color name="status_lost">#F59E0B</color>
+    <color name="status_lost_bg">#FEF3C7</color>
 
-    <color name="gray_bg">#F8FAFC</color>
-    <color name="gray_text">#64748B</color>
-    <color name="gray_label">#94A3B8</color>
-    <color name="imei_field_bg">#F1F5F9</color>
-
+    <!-- Dashboard Stat Colors -->
     <color name="stat_reg_bg">#ECFDF5</color>
     <color name="stat_reg_text">#059669</color>
     <color name="stat_ver_bg">#EFF6FF</color>
     <color name="stat_ver_text">#2563EB</color>
     <color name="stat_rep_bg">#FFF7ED</color>
     <color name="stat_rep_text">#D97706</color>
+
+    <!-- UI Helpers & Neutrals -->
+    <color name="gray_bg">#F8FAFC</color>
+    <color name="gray_text">#64748B</color>
+    <color name="gray_label">#94A3B8</color>
+    <color name="gray_50">#F8FAFC</color>
+    <color name="gray_100">#F1F5F9</color>
+    <color name="gray_200">#E2E8F0</color>
+    <color name="gray_300">#CBD5E1</color>
+    <color name="gray_400">#94A3B8</color>
+    <color name="gray_500">#64748B</color>
+    <color name="gray_600">#475569</color>
+    <color name="gray_800">#1E293B</color>
+
+    <!-- Indigo & Emerald Palette -->
+    <color name="indigo_50">#EEF2FF</color>
+    <color name="indigo_100">#E0E7FF</color>
+    <color name="indigo_600">#4F46E5</color>
+    <color name="emerald_50">#ECFDF5</color>
+    <color name="emerald_600">#059669</color>
+    <color name="emerald_700">#047857</color>
+    <color name="blue_50">#EFF6FF</color>
+    <color name="blue_600">#2563EB</color>
+    <color name="amber_50">#FFF7ED</color>
+    <color name="amber_600">#D97706</color>
+    <color name="red_600">#E11D48</color>
+
+    <!-- Dark Mode palette (Base Definitions to prevent linking errors) -->
+    <color name="dark_surface">#0F172A</color>
+    <color name="dark_on_surface">#F1F5F9</color>
+    <color name="dark_surface_variant">#1E293B</color>
+    <color name="dark_on_surface_variant">#94A3B8</color>
+    <color name="dark_outline">#334155</color>
 </resources>

@@ -1,25 +1,30 @@
 package com.example.phonecircle;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ProfileActivity extends AppCompatActivity {
 
-    private ImageView btnBack, btnEditProfile;
-    private TextView tvName, tvEmail, tvPhone;
-    private Button btnEditSave;
+    private ImageView btnBack;
+    private TextInputEditText etName, etEmail, etPhone;
+    private Button btnProfileAction;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private boolean isEditMode = false;
+    private String currentUserId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,52 +36,75 @@ public class ProfileActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         btnBack = findViewById(R.id.btn_back);
-        btnEditProfile = findViewById(R.id.btn_edit_profile);
-        tvName = findViewById(R.id.tv_profile_name);
-        tvEmail = findViewById(R.id.tv_profile_email);
-        tvPhone = findViewById(R.id.tv_profile_phone);
-        btnEditSave = findViewById(R.id.btn_edit_save);
+        etName = findViewById(R.id.et_profile_name);
+        etEmail = findViewById(R.id.et_profile_email);
+        etPhone = findViewById(R.id.et_profile_phone);
+        btnProfileAction = findViewById(R.id.btn_profile_action);
 
         btnBack.setOnClickListener(v -> finish());
 
         if (currentUser != null) {
-            tvEmail.setText(currentUser.getEmail());
-            fetchUserProfile(currentUser.getUid());
+            currentUserId = currentUser.getUid();
+            etEmail.setText(currentUser.getEmail());
+            fetchUserProfile();
         }
 
-        btnEditProfile.setOnClickListener(v -> toggleEditMode());
-        btnEditSave.setOnClickListener(v -> {
+        btnProfileAction.setOnClickListener(v -> {
             if (isEditMode) {
                 saveProfile();
             } else {
-                toggleEditMode();
+                enableEditMode(true);
             }
         });
     }
 
-    private void fetchUserProfile(String userId) {
-        db.collection("users").document(userId).get()
+    private void fetchUserProfile() {
+        db.collection("users").document(currentUserId).get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
-                        tvName.setText(documentSnapshot.getString("name"));
-                        tvPhone.setText(documentSnapshot.getString("phone"));
+                        etName.setText(documentSnapshot.getString("name"));
+                        etPhone.setText(documentSnapshot.getString("phone"));
                     }
-                });
+                })
+                .addOnFailureListener(e -> Toast.makeText(this, "Failed to load profile", Toast.LENGTH_SHORT).show());
     }
 
-    private void toggleEditMode() {
-        isEditMode = !isEditMode;
-        if (isEditMode) {
-            btnEditSave.setText("Save Changes");
-            Toast.makeText(this, "Edit Mode Enabled", Toast.LENGTH_SHORT).show();
-            // In a real app, you'd switch TextViews to EditTexts or enable editing
-        } else {
-            btnEditSave.setText("Edit Profile");
+    private void enableEditMode(boolean enable) {
+        isEditMode = enable;
+        etName.setEnabled(enable);
+        etPhone.setEnabled(enable);
+        // Email remains disabled as it's the primary login identifier
+        btnProfileAction.setText(enable ? "Save Changes" : "Edit Profile");
+        
+        if (enable) {
+            etName.requestFocus();
         }
     }
 
     private void saveProfile() {
-        Toast.makeText(this, "Profile Updated Successfully", Toast.LENGTH_SHORT).show();
-        toggleEditMode();
+        String name = etName.getText().toString().trim();
+        String phone = etPhone.getText().toString().trim();
+
+        if (name.isEmpty()) {
+            etName.setError("Name is required");
+            return;
+        }
+
+        Map<String, Object> userUpdates = new HashMap<>();
+        userUpdates.put("name", name);
+        userUpdates.put("phone", phone);
+
+        btnProfileAction.setEnabled(false);
+        db.collection("users").document(currentUserId)
+                .update(userUpdates)
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(this, "Profile Updated Successfully", Toast.LENGTH_SHORT).show();
+                    enableEditMode(false);
+                    btnProfileAction.setEnabled(true);
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "Update failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    btnProfileAction.setEnabled(true);
+                });
     }
 }

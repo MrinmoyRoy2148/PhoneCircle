@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Semantic Theme Colors (Dark) -->
+    <color name="app_background">#0F172A</color>
+    <color name="app_surface">#1E293B</color>
+    <color name="text_primary">#F1F5F9</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="divider_color">#334155</color>
+
+    <!-- Override Status BGs for Dark mode visibility if needed -->
+    <color name="status_safe_bg">#064E3B</color>
+    <color name="status_stolen_bg">#7F1D1D</color>
+    <color name="status_lost_bg">#78350F</color>
+</resources>

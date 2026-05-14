@@ -106,42 +106,6 @@
                                 android:src="@android:drawable/ic_media_play"
                                 app:tint="@color/gray_label" />
                         </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:background="#F1F5F9" />
-
-                        <!-- Two-Factor Authentication -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:src="@android:drawable/ic_dialog_dialer"
-                                app:tint="@color/primary_blue" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_weight="1"
-                                android:text="Two-Factor Auth"
-                                android:textColor="@color/black"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
-
-                            <com.google.android.material.materialswitch.MaterialSwitch
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:checked="false" />
-                        </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -169,7 +133,7 @@
 
                         <!-- Theme Change -->
                         <LinearLayout
-                            android:id="@+id/btn_theme_change"
+                            android:id="@+id/btn_theme_toggle_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="?attr/selectableItemBackground"
@@ -201,6 +165,7 @@
                                     android:textStyle="bold" />
 
                                 <TextView
+                                    android:id="@+id/tv_theme_status"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Off"
@@ -209,59 +174,9 @@
                             </LinearLayout>
 
                             <com.google.android.material.materialswitch.MaterialSwitch
+                                android:id="@+id/switch_dark_mode"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:checked="false" />
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginHorizontal="16dp"
-                            android:background="#F1F5F9" />
-
-                        <!-- Language -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:src="@android:drawable/ic_menu_sort_alphabetically"
-                                app:tint="@color/primary_blue" />
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Language"
-                                    android:textColor="@color/black"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="English (US)"
-                                    android:textColor="@color/gray_text"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:src="@android:drawable/ic_media_play"
-                                app:tint="@color/gray_label" />
+                                android:layout_height="wrap_content" />
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -295,7 +210,7 @@
                             android:orientation="horizontal"
                             android:padding="16dp">
                             <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_dialog_info" app:tint="@color/primary_blue" />
-                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="16dp" android:text="App Version" android:textColor="@color/black" android:textStyle="bold" />
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:text="App Version" android:textColor="@color/black" android:textStyle="bold" />
                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="v1.0.0" android:textColor="@color/gray_text" />
                         </LinearLayout>
                     </LinearLayout>

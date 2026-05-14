@@ -28,7 +28,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="@drawable/circle_action_bg"
-                    android:contentDescription="Back"
+                    android:contentDescription="@string/cancel"
                     android:padding="8dp"
                     android:src="@android:drawable/ic_menu_revert"
                     app:tint="@color/white" />
@@ -38,21 +38,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
-                    android:text="My Profile"
+                    android:text="@string/my_profile"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/btn_edit_profile"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:background="@drawable/circle_action_bg"
-                    android:contentDescription="Edit"
-                    android:padding="8dp"
-                    android:src="@android:drawable/ic_menu_edit"
-                    app:tint="@color/white" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -99,7 +88,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Personal Information"
+                            android:text="@string/personal_info"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -111,66 +100,60 @@
                             android:background="#F1F5F9" />
 
                         <!-- Name Field -->
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
-                            android:text="Full Name"
-                            android:textColor="@color/gray_label"
-                            android:textSize="12sp" />
-                        <TextView
-                            android:id="@+id/tv_profile_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Md. Ashraful Islam"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:hint="@string/full_name">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_profile_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPersonName"
+                                android:enabled="false" />
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                        <!-- Email Field -->
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <!-- Email Field (Read Only) -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:text="Email Address"
-                            android:textColor="@color/gray_label"
-                            android:textSize="12sp" />
-                        <TextView
-                            android:id="@+id/tv_profile_email"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="ashraf@example.com"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:layout_marginTop="12dp"
+                            android:hint="@string/email_address">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_profile_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textEmailAddress"
+                                android:enabled="false" />
+                        </com.google.android.material.textfield.TextInputLayout>
 
                         <!-- Phone Field -->
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:text="Phone Number"
-                            android:textColor="@color/gray_label"
-                            android:textSize="12sp" />
-                        <TextView
-                            android:id="@+id/tv_profile_phone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="+880 1XXX-XXXXXX"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
+                            android:layout_marginTop="12dp"
+                            android:hint="@string/phone_number">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_profile_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="phone"
+                                android:enabled="false" />
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <Button
-                    android:id="@+id/btn_edit_save"
+                    android:id="@+id/btn_profile_action"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginTop="24dp"
                     android:backgroundTint="@color/primary_blue"
-                    android:text="Edit Profile"
+                    android:text="@string/edit_profile"
                     android:textAllCaps="false"
                     android:textStyle="bold"
                     app:cornerRadius="12dp" />

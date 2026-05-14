@@ -4,7 +4,7 @@
     android:layout_width="300dp"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:background="@color/white"
+    android:background="?android:attr/colorBackground"
     android:clickable="true"
     android:focusable="true"
     android:orientation="vertical">
@@ -29,7 +29,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Menu"
+                    android:text="@string/menu"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -71,7 +71,7 @@
                             android:id="@+id/nav_user_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Md. Ashraful Islam"
+                            android:text="@string/default_user_name"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -80,7 +80,7 @@
                             android:id="@+id/nav_user_email"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ashraf@example.com"
+                            android:text="@string/default_user_email"
                             android:textColor="#CCFFFFFF"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="140dp"
                     android:backgroundTint="#33FFFFFF"
-                    android:text="View Profile"
+                    android:text="@string/view_profile"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     app:cornerRadius="12dp" />
@@ -109,23 +109,28 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="QUICK ACCESS"
+                    android:text="@string/quick_access"
                     android:textColor="@color/gray_label"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
-                <!-- Menu Item: Registered Phones -->
+                <!-- Registered Phones -->
                 <LinearLayout
+                    android:id="@+id/nav_registered_phones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="#EFF6FF"
+                        android:background="?attr/colorSurfaceVariant"
                         android:padding="8dp"
                         android:src="@drawable/ic_phone_android"
                         app:tint="@color/primary_blue" />
@@ -140,16 +145,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="My Registered Phones"
-                            android:textColor="@color/black"
+                            android:text="@string/your_registered_phones"
+                            android:textColor="?android:attr/textColorPrimary"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/nav_registered_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="2 items"
-                            android:textColor="@color/gray_text"
+                            android:text="@string/count_zero"
+                            android:textColor="?android:attr/textColorSecondary"
                             android:textSize="11sp" />
                     </LinearLayout>
 
@@ -160,18 +166,23 @@
                         app:tint="@color/gray_label" />
                 </LinearLayout>
 
-                <!-- Menu Item: IMEI Verifications -->
+                <!-- IMEI Verifications -->
                 <LinearLayout
+                    android:id="@+id/nav_imei_verifications"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="#F0F9FF"
+                        android:background="?attr/colorSurfaceVariant"
                         android:padding="8dp"
                         android:src="@drawable/ic_shield_logo"
                         app:tint="#0284C7" />
@@ -186,16 +197,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="IMEI Verifications"
-                            android:textColor="@color/black"
+                            android:text="@string/verify_imei"
+                            android:textColor="?android:attr/textColorPrimary"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/nav_verified_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15 items"
-                            android:textColor="@color/gray_text"
+                            android:text="@string/count_zero"
+                            android:textColor="?android:attr/textColorSecondary"
                             android:textSize="11sp" />
                     </LinearLayout>
 
@@ -206,18 +218,23 @@
                         app:tint="@color/gray_label" />
                 </LinearLayout>
 
-                <!-- Menu Item: My Reports -->
+                <!-- My Reports -->
                 <LinearLayout
+                    android:id="@+id/nav_my_reports"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="#FFF7ED"
+                        android:background="?attr/colorSurfaceVariant"
                         android:padding="8dp"
                         android:src="@android:drawable/ic_menu_myplaces"
                         app:tint="#EA580C" />
@@ -232,62 +249,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="My Reports"
-                            android:textColor="@color/black"
+                            android:text="@string/my_reports"
+                            android:textColor="?android:attr/textColorPrimary"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/nav_reports_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="1 item"
-                            android:textColor="@color/gray_text"
-                            android:textSize="11sp" />
-                    </LinearLayout>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@android:drawable/ic_media_play"
-                        app:tint="@color/gray_label" />
-                </LinearLayout>
-
-                <!-- Menu Item: Community Reports -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="#FAF5FF"
-                        android:padding="8dp"
-                        android:src="@android:drawable/ic_menu_camera"
-                        app:tint="#9333EA" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Community Reports"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0 items"
-                            android:textColor="@color/gray_text"
+                            android:text="@string/count_zero"
+                            android:textColor="?android:attr/textColorSecondary"
                             android:textSize="11sp" />
                     </LinearLayout>
 
@@ -302,81 +274,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="20dp"
-                    android:background="#F1F5F9" />
+                    android:background="?android:attr/dividerVertical" />
 
                 <!-- Account Section -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="ACCOUNT"
+                    android:text="@string/account"
                     android:textColor="@color/gray_label"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
-                <!-- Account Items -->
                 <LinearLayout
                     android:id="@+id/nav_settings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
                     <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_manage" app:tint="@color/gray_text"/>
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:text="Settings" android:textColor="@color/black" android:textStyle="bold"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:text="@string/settings" android:textColor="?android:attr/textColorPrimary" android:textStyle="bold"/>
                     <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_media_play" app:tint="@color/gray_label" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_help" app:tint="@color/gray_text"/>
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:text="Help &amp; Support" android:textColor="@color/black" android:textStyle="bold"/>
-                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_media_play" app:tint="@color/gray_label" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_info_details" app:tint="@color/gray_text"/>
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:text="Terms of Service" android:textColor="@color/black" android:textStyle="bold"/>
-                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_media_play" app:tint="@color/gray_label" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_lock_lock" app:tint="@color/gray_text"/>
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:text="Privacy Policy" android:textColor="@color/black" android:textStyle="bold"/>
-                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_media_play" app:tint="@color/gray_label" />
-                </LinearLayout>
-
-                <!-- Contact Support Card -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:background="#F8FAFC"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Contact Support" android:textColor="@color/black" android:textStyle="bold" android:textSize="13sp"/>
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="center_vertical">
-                        <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@android:drawable/ic_dialog_email" app:tint="@color/primary_blue"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="support@phonecircle.com" android:textColor="@color/gray_text" android:textSize="12sp"/>
-                    </LinearLayout>
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:gravity="center_vertical">
-                        <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@android:drawable/ic_menu_call" app:tint="@color/primary_blue"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="+880 1XXX-XXXXXX" android:textColor="@color/gray_text" android:textSize="12sp"/>
-                    </LinearLayout>
                 </LinearLayout>
 
                 <!-- Logout Button -->
@@ -385,22 +308,21 @@
                     style="@style/Widget.Material3.Button.TonalButton"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="32dp"
                     android:backgroundTint="#FFF1F2"
-                    android:text="Log Out"
+                    android:text="@string/logout"
                     android:textColor="#E11D48"
                     app:icon="@android:drawable/ic_lock_power_off"
                     app:iconTint="#E11D48" />
 
-                <!-- Footer Info -->
+                <!-- Footer -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:gravity="center"
                     android:orientation="vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PhoneCircle v1.0.0" android:textColor="@color/gray_label" android:textSize="10sp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="© 2026 All rights reserved" android:textColor="@color/gray_label" android:textSize="10sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_version" android:textColor="@color/gray_label" android:textSize="10sp"/>
                 </LinearLayout>
 
             </LinearLayout>
